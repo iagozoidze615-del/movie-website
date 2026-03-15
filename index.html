@@ -1,132 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Movie streaming platform showcasing latest movies and series" />
-  <meta name="theme-color" content="#0b1220" />
-  <title>Movie Streaming - Watch Movies & Series Online</title>
-  
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>small online shopping website</title>
 </head>
 <body>
-
-  <header class="navbar">
-    <div class="navbar-container">
-      <div class="navbar-logo">
-        <h2>🎬 MovieFlix</h2>
-      </div>
-
-      <nav class="navbar-nav">
-        <a href="#home" class="nav-link active">Home</a>
-        <a href="#pricing" class="nav-link">Pricing</a>
-        <a href="#movies" class="nav-link">Movies</a>
-        <a href="#recommended" class="nav-link">Recommended</a>
-        <a href="#series" class="nav-link">Series</a>
-        <a href="#collection" class="nav-link">Collection</a>
-        <a href="#faq" class="nav-link">FAQ</a>
-      </nav>
-
-      <div class="navbar-icons">
-        <button class="icon-btn" id="searchBtn" aria-label="Search">🔍</button>
-        <button class="icon-btn" id="notifBtn" aria-label="Notifications">🔔</button>
-        <button class="icon-btn" id="profileBtn" aria-label="Profile">👤</button>
-        <button class="icon-btn" id="themeToggle" aria-label="Toggle dark/light mode">🌙</button>
-      </div>
-    </div>
-  </header>
-
-
-  <main class="hero" id="home">
-    <div class="hero-container">
-      <div class="hero-content">
-        <h1 class="hero-title">The Witcher</h1>
-        
-        <p class="hero-description">
-          Geralt of Rivia, a mutated monster-hunter for hire, journeys toward
-          his destiny in a turbulent world where people often prove more
-          wicked than beasts.
-        </p>
-
-        <div class="hero-meta">
-          <div class="rating">
-            <span class="stars">⭐⭐⭐⭐☆</span>
-            <span class="imdb-badge">IMDb 8.1</span>
-            <span class="platform-badge">NETFLIX</span>
-          </div>
-        </div>
-
-        <div class="hero-actions">
-          <button class="btn btn-primary" id="watchBtn">▶ Watch Movie</button>
-          <button class="btn btn-secondary" id="infoBtn">More Info →</button>
-        </div>
-      </div>
-
-   
-      <div class="cards-container">
-        <div class="card active" data-movie="witcher">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYYyhwdaUoy1pe1b-wdTdQKPGIJaVSEjf_0w&s" alt="The Witcher" />
-          <div class="card-overlay">The Witcher</div>
-        </div>
-          <div class="card" data-movie="stranger-things" data-image="assets/images/recommended/stranger-things-poster.webp">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/3/38/Stranger_Things_logo.png" alt="Stranger Things" />
-            <div class="card-overlay">Stranger Things</div>
-          </div>
-          <div class="card" data-movie="dark" data-image="assets/images/recommended/dark-poster.webp">
-            <img src="https://m.media-amazon.com/images/M/MV5BOWJjMGViY2UtNTAzNS00ZGFjLWFkNTMtMDBiMDMyZTM1NTY3XkEyXkFqcGc@._V1_.jpg" alt="Dark" />
-            <div class="card-overlay">Dark</div>
-          </div>
-          <div class="card" data-movie="breakdown" data-image="assets/images/recommended/breakdown-poster.webp">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSITzdYr1_PZx6axlyFzIf_an_3hlrrkHuV4hXHfz34kF2ppePDJci21mFq7vAawWhjEQNAxJaPog3TlNjhEek2T85AjCWMAMF7iBKrvg&s=10" alt="Breakdown" />
-            <div class="card-overlay">Breakdown</div>
-          </div>
-      </div>
-    </div>
-    <div class="hero-background"></div>
-  </main>
-
-  <section id="movies" class="trending-section">
-    <div class="container">
-      <div class="section-header">
-        <h2>Trending Movies</h2>
-        <div class="section-actions">
-          <button id="refreshTrending" class="btn btn-secondary">Refresh</button>
-          <button id="useSample" class="btn">Use Sample Data</button>
-        </div>
-      </div>
-
-      <div id="trendingGrid" class="trending-grid" aria-live="polite">
-        <img src="assets/images/trending/trending-1.webp" alt="Trending movie 1" class="movie-thumb" data-movie="trending-1" />
-        <img src="assets/images/trending/trending-2.webp" alt="Trending movie 2" class="movie-thumb" data-movie="trending-2" />
-        <img src="assets/images/trending/trending-3.webp" alt="Trending movie 3" class="movie-thumb" data-movie="trending-3" />
-        <img src="assets/images/trending/trending-4.webp" alt="Trending movie 4" class="movie-thumb" data-movie="trending-4" />
-      </div>
-
-      <p class="api-note">Tip: To enjoy movie experience fully set your screen resolution to HD or if possible higher.</p>
-    </div>
-  </section>
-
-  <section id="recommended" class="trending-section recommended-section">
-    <div class="container">
-      <div class="section-header">
-        <h2>Recommended For You</h2>
-        <div class="section-actions">
-          <button id="refreshRecommended" class="btn btn-secondary">Refresh</button>
-          <button id="useSampleRecommended" class="btn">Use Sample Recommended</button>
-        </div>
-      </div>
-
-      <div id="recommendedGrid" class="trending-grid" aria-live="polite">
-        <img src="assets/images/recommended/the-witcher-poster.webp" alt="The Witcher poster" class="movie-thumb" data-movie="witcher" />
-        <img src="assets/images/recommended/stranger-things-poster.webp" alt="Stranger Things poster" class="movie-thumb" data-movie="stranger-things" />
-        <img src="assets/images/recommended/dark-poster.webp" alt="Dark poster" class="movie-thumb" data-movie="dark" />
-        <img src="assets/images/recommended/breakdown-poster.webp" alt="Breakdown poster" class="movie-thumb" data-movie="breakdown" />
-      </div>
-
-      <p class="api-note">Tip: Click a Trending movie and watch some of them to extend your recomendations.</p>
-    </div>
-  </section>
-
-  <script src="script.js"></script>
+    <header>
+        <h1>Online Shopping</h1>
+    </header>
+    <main>
+        <section id="products">
+            <h2>Products</h2>
+            <div class="product" data-id="1">
+                <h3>Laptop</h3>
+                <p>Price: $1000</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product" data-id="2">
+                <h3>Phone</h3>
+                <p>Price: $500</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product" data-id="3">
+                <h3>Headphones</h3>
+                <p>Price: $100</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+        </section>
+        <section id="cart">
+            <h2>Shopping Cart</h2>
+            <ul id="cart-items"></ul>
+            <p>Total: $<span id="total">0</span></p>
+            <button id="clear-cart">Clear Cart</button>
+        </section>
+    </main>
+    <script src="script.js"></script>
 </body>
 </html>
