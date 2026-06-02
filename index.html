@@ -1,41 +1,47 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>small online shopping website</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A lightweight chatbot demo built with HTML, CSS, and JavaScript.">
+  <link rel="stylesheet" href="style.css">
+  <title>O-block AI Chat</title>
 </head>
 <body>
-    <header>
-        <h1>Online Shopping</h1>
+  <main class="chat-container" role="application" aria-labelledby="chat-title">
+    <header class="chat-header">
+      <div>
+        <h1 id="chat-title">O-block AI</h1>
+        <p class="chat-subtitle">Ask a question, share a photo, or try one of the suggested prompts.</p>
+      </div>
     </header>
-    <main>
-        <section id="products">
-            <h2>Products</h2>
-            <div class="product" data-id="1">
-                <h3>Laptop</h3>
-                <p>Price: $1000</p>
-                <button class="add-to-cart">Add to Cart</button>
-            </div>
-            <div class="product" data-id="2">
-                <h3>Phone</h3>
-                <p>Price: $500</p>
-                <button class="add-to-cart">Add to Cart</button>
-            </div>
-            <div class="product" data-id="3">
-                <h3>Headphones</h3>
-                <p>Price: $100</p>
-                <button class="add-to-cart">Add to Cart</button>
-            </div>
-        </section>
-        <section id="cart">
-            <h2>Shopping Cart</h2>
-            <ul id="cart-items"></ul>
-            <p>Total: $<span id="total">0</span></p>
-            <button id="clear-cart">Clear Cart</button>
-        </section>
-    </main>
-    <script src="script.js"></script>
+
+    <section class="suggestions" aria-label="Suggested prompts">
+      <strong>Try asking:</strong>
+      <ul class="suggestion-list">
+        <li><button type="button" class="suggestion-button">What can you do?</button></li>
+        <li><button type="button" class="suggestion-button">Tell me a joke.</button></li>
+        <li><button type="button" class="suggestion-button">What is your name?</button></li>
+        <li><button type="button" class="suggestion-button">How are you today?</button></li>
+        <li><button type="button" class="suggestion-button">Give me a fun fact.</button></li>
+      </ul>
+    </section>
+
+    <section class="messages-wrapper" aria-label="Chat messages">
+      <div class="chat-messages" id="chat-messages" aria-live="polite" role="log"></div>
+    </section>
+
+    <form class="chat-input" id="chat-form">
+      <div class="input-row">
+        <label class="sr-only" for="user-input">Chat message</label>
+        <input type="text" id="user-input" name="message" placeholder="Type your message here..." autocomplete="off">
+        <button id="send-button" type="submit">Send</button>
+        <input type="file" id="photo-input" accept="image/*" hidden>
+        <button id="photo-button" type="button" title="Upload photo" aria-label="Upload photo">📷</button>
+      </div>
+    </form>
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
